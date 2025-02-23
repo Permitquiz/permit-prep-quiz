@@ -1,0 +1,294 @@
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    color: aliceblue;
+    overflow: hidden;
+    background-color: #09001d;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo{
+    font-size: 32px;
+    color: #42493b;
+    text-decoration: none;
+    font-weight: 700;
+    border: 4px solid rgb(183, 137, 20);
+    background-color: whitesmoke;
+    border-radius: 6px;
+}
+.navbar a {
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 25px;
+}
+.navbar a:hover{
+    color: black;
+}
+.navbar a.active{
+    color: black;
+}
+.main{
+    min-height: 100vh;
+    background: url('background1.png') no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    image-rendering: pixelated;
+}
+.container{
+    display: flex;
+    height: 100vh;
+    width: 200%;
+}
+.Home{
+    position: relative;
+    left: -50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Home-content{
+    max-width: 600px;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+.Home-content h1{
+    font-size: 60px;
+    font-weight: 700;
+    color: #09001d;
+    text-align: center;
+    text-shadow: 0 0 10px rgb(10, 63, 6);
+}
+.Home-content p{
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    text-shadow: 0 0 10px rgb(10, 63, 6);
+    margin-bottom: 20px;
+}
+.Home-content .Start-btn{
+    width: 160px;
+    height: 45px;
+    background: transparent;
+    border: 3px solid rgb(183, 137, 20);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgb(40, 77, 47);
+    font-size: 20px;
+    color: #42493b;
+    letter-spacing: 1px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .5s;
+}
+.Home-content .Start-btn:hover {
+    background: whitesmoke;
+    box-shadow: none;
+}
+.popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 450px;
+    border-radius: 6px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('background.jpg');
+    background-size: 100% 100%;
+    background-position: center center;
+    image-rendering: pixelated;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+.popup.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.popup h2{
+    font-size: 50px;
+    color: antiquewhite; 
+}
+.popup .info{
+    display: inline-block;
+    font-size: 16px;
+    color: antiquewhite;
+    font-weight: 780;
+    margin: 4px 0;
+    padding: 10px 25px;
+}
+.popup .btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 15px 0 7px;
+    outline: black;
+}
+.popup .btn .inf{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 43px;
+    background: #b94d4d;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgb(40, 77, 47);
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .5s;
+}
+.popup .btn .inf:hover {
+    background: whitesmoke;
+    box-shadow: none;
+}
+.quizsec{
+    position: relative;
+    left: 50%;
+    width: 100%;
+    background: url(background6.avif);
+    background-size: 100% 100%;
+    background-position: center center;
+    image-rendering: pixelated;
+    font-size: 16px;
+    color: #09001d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: .8s ease-in-out;
+    transition-delay: .25s;
+
+}
+.quizsec.active{
+    left: 0;
+}
+.quizsec .quizbox{
+    position: relative;
+    width: 500px;
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.9);
+}
+.quizsec .quizbox.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: 1s ease;
+    transition-delay: 1s;
+
+}
+.quizbox h1{
+    font-size: 32px;
+    text-align: center;
+}
+.quizbox .quizheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+}
+.quizheader .quizscore{
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgb(40, 77, 47);
+    padding: 7px;
+}
+.quizbox .questions{
+    font-size: 24px;
+    font-weight: 600;
+}
+.option-list .option{
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    border: 2px solid black;
+    border-radius: 3px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: .3s;
+}
+.option-list .option:hover{
+    background: gray;
+    box-shadow: none;
+}
+.option-list .option.correct{
+    background: whitesmoke;
+    color: seagreen;
+    border-color: seagreen;
+}
+.option-list .option.wrong{
+    background: whitesmoke;
+    color: rgb(136, 4, 4);
+    border-color: rgb(136, 4, 4);
+}
+.option-list .option.disable{
+    pointer-events: none;
+}
+.quizbox .quiz-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid black;
+    padding-top: 15px;
+}
+.quiz-footer .question-total{
+    font-size: 16px;
+    font-weight: 600;
+}
+.quiz-footer .next-btn{
+    width: 100px;
+    height: 45px;
+    background: transparent;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    align-items: center;
+    pointer-events: none;
+    cursor: pointer;
+    transition: .5s;
+
+}
+.quiz-footer .next-btn.active:hover{
+    background: whitesmoke;
+    box-shadow: none;
+}
+
+.quiz-footer .next-btn.active{
+    pointer-events: auto;
+    background: transparent;
+    box-shadow: 0 0 10px rgb(40, 77, 47);
+}
